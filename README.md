@@ -43,7 +43,7 @@
 
 ```bash
 git clone https://github.com/Ridho894/nestjs-graphql-mongo-starter.git
-cd nestjs-gql-mongo-starter
+cd nestjs-graphql-mongo-starter
 ```
 
 2. **Install dependencies**
