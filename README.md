@@ -42,7 +42,7 @@
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/nestjs-gql-mongo-starter.git
+git clone https://github.com/Ridho894/nestjs-graphql-mongo-starter.git
 cd nestjs-gql-mongo-starter
 ```
 
