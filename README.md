@@ -139,13 +139,52 @@ Once the application is running, you can access the GraphQL Playground at:
 http://localhost:3000/graphql
 ```
 
+## 📝 Commit Message Convention
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org/) for clear and structured commit messages. This helps in maintaining a standardized commit history and automated versioning.
+
+### Commit Message Format
+
+Each commit message consists of a **header**, an optional **body**, and an optional **footer**:
+
+```
+<type>(<scope>): <short summary>
+│       │             │
+│       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+│       │
+│       └─⫸ Commit Scope (optional): modules|config|schema
+│
+└─⫸ Commit Type: feat|fix|docs|style|refactor|test|chore|ci|build|perf
+```
+
+### Types
+
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **test**: Adding missing tests or correcting existing tests
+- **chore**: Changes to the build process or auxiliary tools
+- **ci**: Changes to CI configuration files and scripts
+- **build**: Changes that affect the build system or external dependencies
+- **perf**: Performance improvements
+
+### Examples
+
+```
+feat(auth): add JWT authentication
+fix(users): resolve issue with user creation
+docs(readme): update installation instructions
+```
+
 ## 🤝 Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+3. Commit your Changes (`git commit -m 'feat: add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
