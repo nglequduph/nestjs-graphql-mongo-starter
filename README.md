@@ -16,6 +16,7 @@
 - 🧩 Modular architecture
 - 📏 ESLint + Prettier for consistent code style
 - 🚦 Class Validator for DTO validation
+- 🔄 Conventional Commits for structured commit messages
 
 ## 📚 Tech Stack
 
@@ -80,6 +81,28 @@ yarn start:dev
 
 Your GraphQL API will be available at `http://localhost:3000/graphql`
 
+## 📊 GraphQL Playground
+
+Once your application is running, you can access the GraphQL Playground to interact with your API:
+
+![GraphQL Playground Screenshot](public/screenshots/graphql-playground.png)
+
+_Screenshot: GraphQL Playground interface showing query execution_
+
+### Sample Queries
+
+Here's a simple query you can try in the playground:
+
+```graphql
+{
+  users {
+    _id
+    name
+    email
+  }
+}
+```
+
 ## 🧰 Development Commands
 
 | Command               | Description                          |
@@ -110,6 +133,8 @@ nestjs-gql-mongo-starter/
 │   │       └── users.service.ts
 │   ├── app.module.ts      # Main application module
 │   └── main.ts           # Application entry point
+├── public/
+│   └── screenshots/       # Screenshots for documentation
 ├── test/                  # Testing utilities
 ├── .env                   # Environment variables (create this)
 ├── .gitignore             # Git ignore file
@@ -125,19 +150,6 @@ nestjs-gql-mongo-starter/
   - Code-first approach using decorators
   - Schema auto-generation
   - Resolvers for queries and mutations
-- **Database**
-  - MongoDB integration with Mongoose
-  - Repository pattern
-- **Validation**
-  - Input validation with class-validator
-
-## 🔍 GraphQL Playground
-
-Once the application is running, you can access the GraphQL Playground at:
-
-```
-http://localhost:3000/graphql
-```
 
 ## 📝 Commit Message Convention
 
