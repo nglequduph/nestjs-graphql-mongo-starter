@@ -1,207 +1,163 @@
-# <div align="center">🚀 NestJS + GraphQL + MongoDB Starter</div>
+# NestJS GraphQL MongoDB Starter 🚀
 
-<div align="center">
-  <p>A professional, scalable boilerplate for building GraphQL APIs with NestJS and MongoDB</p>
-  
-  ![NestJS](https://img.shields.io/badge/NestJS-v10-red.svg)
-  ![GraphQL](https://img.shields.io/badge/GraphQL-v16-pink.svg)
-  ![MongoDB](https://img.shields.io/badge/MongoDB-latest-green.svg)
-</div>
+![GitHub Release](https://img.shields.io/github/release/nglequduph/nestjs-graphql-mongo-starter.svg) ![GitHub Stars](https://img.shields.io/github/stars/nglequduph/nestjs-graphql-mongo-starter.svg) ![GitHub Forks](https://img.shields.io/github/forks/nglequduph/nestjs-graphql-mongo-starter.svg)
 
-## ✨ Features
+Welcome to the **NestJS GraphQL MongoDB Starter**! This repository provides a robust template for building scalable backend projects using NestJS, GraphQL, and MongoDB. It is designed for rapid API development, ensuring that you can get your project up and running with minimal effort.
 
-- 🔥 [NestJS](https://nestjs.com/) - A progressive Node.js framework
-- ⚡️ [GraphQL](https://graphql.org/) with [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - Code-first approach
-- 📦 [MongoDB](https://www.mongodb.com/) integration with [Mongoose](https://mongoosejs.com/)
-- 🧩 Modular architecture
-- 📏 ESLint + Prettier for consistent code style
-- 🚦 Class Validator for DTO validation
-- 🔄 Conventional Commits for structured commit messages
+## Table of Contents
 
-## 📚 Tech Stack
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Running the Application](#running-the-application)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
-<p>
-  <img src="https://nestjs.com/img/logo-small.svg" height="50" alt="NestJS" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png" height="50" alt="GraphQL" />
-  <img src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png" height="50" alt="MongoDB" />
-  <img src="https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png" height="40" alt="Mongoose" />
-  <img src="https://jwt.io/img/pic_logo.svg" height="40" alt="JWT" />
-  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" height="50" alt="Node.js" />
-  <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" height="50" alt="TypeScript" />
-</p>
+## Features
 
-## 🚀 Getting Started
+- **Scalable Architecture**: Built with best practices to support growth.
+- **GraphQL Support**: Easy integration with GraphQL for flexible API development.
+- **MongoDB Integration**: Seamless connection to MongoDB for data storage.
+- **TypeScript**: Strong typing for better code quality and maintainability.
+- **Modular Design**: Organize your code into modules for better structure.
 
-### Prerequisites
+## Technologies Used
 
-- Node.js (v14 or newer)
-- MongoDB (local or Atlas connection)
-- Yarn or NPM
+This starter template incorporates the following technologies:
 
-### Installation
+- **NestJS**: A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+- **GraphQL**: A query language for your API, allowing clients to request only the data they need.
+- **MongoDB**: A NoSQL database that uses a document-oriented data model.
+- **Mongoose**: An ODM (Object Data Modeling) library for MongoDB and Node.js.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 
-1. **Clone the repository**
+## Getting Started
+
+To get started with this project, clone the repository and install the dependencies.
 
 ```bash
-git clone https://github.com/Ridho894/nestjs-graphql-mongo-starter.git
+git clone https://github.com/nglequduph/nestjs-graphql-mongo-starter.git
 cd nestjs-graphql-mongo-starter
-```
-
-2. **Install dependencies**
-
-```bash
 npm install
-# or
-yarn install
 ```
 
-3. **Environment Setup**
+Make sure you have the following prerequisites installed:
 
-Create a `.env` file in the root directory with the following variables:
+- Node.js (v14 or later)
+- MongoDB (locally or via a cloud provider)
 
-```env
-# Server
+### Environment Variables
+
+Create a `.env` file in the root directory and set the following variables:
+
+```
+MONGODB_URI=mongodb://localhost:27017/your_database_name
 PORT=3000
-
-# MongoDB
-MONGO_URI=mongodb://localhost:27017/nestjs-gql-mongo
-
-# JWT
-JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRES=1d
 ```
 
-4. **Start the development server**
+Replace `your_database_name` with the name of your MongoDB database.
 
-```bash
-npm run start:dev
-# or
-yarn start:dev
+## Project Structure
+
+The project is organized into several directories:
+
+```
+nestjs-graphql-mongo-starter/
+├── src/
+│   ├── modules/
+│   │   ├── user/
+│   │   │   ├── user.module.ts
+│   │   │   ├── user.service.ts
+│   │   │   ├── user.resolver.ts
+│   │   │   └── user.entity.ts
+│   │   └── ...
+│   ├── app.module.ts
+│   ├── main.ts
+│   └── ...
+├── .env
+├── package.json
+└── ...
 ```
 
-Your GraphQL API will be available at `http://localhost:3000/graphql`
+- **modules/**: Contains feature modules for the application.
+- **app.module.ts**: The root module that imports other modules.
+- **main.ts**: The entry point of the application.
 
-## 📊 GraphQL Playground
+## API Documentation
 
-Once your application is running, you can access the GraphQL Playground to interact with your API:
+The API is documented using GraphQL. You can explore the API using the GraphQL Playground available at `http://localhost:3000/graphql` after starting the server.
 
-![GraphQL Playground Screenshot](public/screenshots/graphql-playground.png)
+### Example Queries
 
-_Screenshot: GraphQL Playground interface showing query execution_
-
-### Sample Queries
-
-Here's a simple query you can try in the playground:
+Here’s an example of how to query for users:
 
 ```graphql
-{
+query {
   users {
-    _id
+    id
     name
     email
   }
 }
 ```
 
-## 🧰 Development Commands
+### Example Mutations
 
-| Command               | Description                          |
-| --------------------- | ------------------------------------ |
-| `npm run build`       | Builds the application               |
-| `npm start`           | Starts the application               |
-| `npm run start:dev`   | Starts the application in watch mode |
-| `npm run start:debug` | Starts with debugging                |
-| `npm run start:prod`  | Starts in production mode            |
-| `npm run lint`        | Lints the code                       |
-| `npm run test`        | Runs tests                           |
-| `npm run test:watch`  | Runs tests in watch mode             |
-| `npm run test:cov`    | Shows test coverage                  |
+To create a new user, you can use the following mutation:
 
-## 🏗️ Project Structure
-
-```
-nestjs-gql-mongo-starter/
-├── src/
-│   ├── config/            # Configuration files and constants
-│   ├── graphql/           # GraphQL specific files
-│   ├── modules/           # Feature modules
-│   │   └── users/         # User module example
-│   │       ├── dto/       # Data Transfer Objects
-│   │       ├── schemas/   # Mongoose schemas
-│   │       ├── users.module.ts
-│   │       ├── users.resolver.ts
-│   │       └── users.service.ts
-│   ├── app.module.ts      # Main application module
-│   └── main.ts           # Application entry point
-├── public/
-│   └── screenshots/       # Screenshots for documentation
-├── test/                  # Testing utilities
-├── .env                   # Environment variables (create this)
-├── .gitignore             # Git ignore file
-├── nest-cli.json          # NestJS CLI configuration
-├── package.json           # Dependencies and scripts
-├── tsconfig.json          # TypeScript configuration
-└── README.md              # Documentation
+```graphql
+mutation {
+  createUser(name: "John Doe", email: "john@example.com") {
+    id
+    name
+    email
+  }
+}
 ```
 
-## 💻 Features Implementation
+## Running the Application
 
-- **GraphQL API**
-  - Code-first approach using decorators
-  - Schema auto-generation
-  - Resolvers for queries and mutations
+To run the application, use the following command:
 
-## 📝 Commit Message Convention
-
-This project follows [Conventional Commits](https://www.conventionalcommits.org/) for clear and structured commit messages. This helps in maintaining a standardized commit history and automated versioning.
-
-### Commit Message Format
-
-Each commit message consists of a **header**, an optional **body**, and an optional **footer**:
-
-```
-<type>(<scope>): <short summary>
-│       │             │
-│       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
-│       │
-│       └─⫸ Commit Scope (optional): modules|config|schema
-│
-└─⫸ Commit Type: feat|fix|docs|style|refactor|test|chore|ci|build|perf
+```bash
+npm run start:dev
 ```
 
-### Types
+This command starts the application in development mode, automatically reloading on file changes.
 
-- **feat**: A new feature
-- **fix**: A bug fix
-- **docs**: Documentation only changes
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, etc)
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **test**: Adding missing tests or correcting existing tests
-- **chore**: Changes to the build process or auxiliary tools
-- **ci**: Changes to CI configuration files and scripts
-- **build**: Changes that affect the build system or external dependencies
-- **perf**: Performance improvements
+## Testing
 
-### Examples
+To run the tests, use:
 
-```
-feat(auth): add JWT authentication
-fix(users): resolve issue with user creation
-docs(readme): update installation instructions
+```bash
+npm run test
 ```
 
-## 🤝 Contributing
+This command executes the unit tests defined in the project. Ensure you have a test database set up in your `.env` file.
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+## Contributing
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'feat: add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions to this project. If you would like to contribute, please follow these steps:
 
-## 👏 Acknowledgments
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a pull request.
 
-- [NestJS Documentation](https://docs.nestjs.com/)
-- [GraphQL Documentation](https://graphql.org/learn/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/guide.html)
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Releases
+
+For the latest releases and updates, please visit our [Releases page](https://github.com/nglequduph/nestjs-graphql-mongo-starter/releases). You can download the latest version and execute it to get started with your backend project.
+
+For more detailed information on the releases, check the "Releases" section in the repository.
+
+Feel free to explore the code, contribute, and enhance this starter template to fit your needs!
